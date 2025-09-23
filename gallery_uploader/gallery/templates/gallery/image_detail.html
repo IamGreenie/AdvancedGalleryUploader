@@ -1,0 +1,25 @@
+{% extends 'gallery/base.html' %}
+
+{% block content %}
+
+<h2>{{ object.title }}</h2>
+<img src="{{ object.image.url }}" alt="{{ object.title }}" width="300">
+<p><strong>Tags:</strong> {{ object.tags }}</p>
+
+<h3>Comments</h3>
+<ul>
+    {% for comment in object.comments.all %}
+        <li>{{ comment.text }} <small>({{ comment.created_at }})</small></li>
+    {% empty %}
+        <li>No comments yet.</li>
+    {% endfor %}
+</ul>
+
+<h3>Leave a Comment</h3>
+<form method="post">
+    {% csrf_token %}
+    <textarea name="text" rows="3" cols="40" placeholder="Your comment..."></textarea><br>
+    <button type="submit">Post Comment</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'gallery/base.html' %}
+
+{% block content %}
+
+<h2>Images You've Viewed</h2>
+<ul>
+    {% for image in images %}
+        <li>
+            <a href="{% url 'image-detail' image.pk %}">{{ image.title }}</a><br>
+            <a href="{% url 'image-detail' image.pk %}">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" width="150">
+            </a>
+        </li>
+    {% empty %}
+        <li>You haven't viewed any images yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'image-list' %}">Back to All Images</a>
+
+{% endblock %}

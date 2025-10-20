@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-aq2f%^5+im4jti8j(1)&=vj&26zm@h&6)z%9&%_23&(seph+3x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gallery-uploader-b32a66dfce55.herokuapp.com']
 
 
 # Application definition
@@ -128,3 +128,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'statifiles')
+

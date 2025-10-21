@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery Uploader</title>
+    <link rel="stylesheet" href="{% static 'gallery/styles.css' %}">
+    <style>
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'upload' %}">Upload</a>
+        <a href="{% url 'personal-gallery' %}">My Gallery</a>
+        <a href="{% url 'image-list' %}">All Images</a>
+        <a href="{% url 'viewing-history' %}">History</a>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
